@@ -1,11 +1,12 @@
-package com.lab.mapreduce.ex1;
+package com.lab.mapreduce.ex2;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
+
 import java.io.IOException;
 
-public class RecordCounterReducer extends Reducer<Text , IntWritable , Text , IntWritable> {
+public class ObservationCounterReducer extends Reducer<Text , IntWritable , Text , IntWritable> {
     IntWritable result = new IntWritable(1);
 
     @Override
