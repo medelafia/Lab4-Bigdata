@@ -24,7 +24,7 @@ public class RecordCounter {
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
 
-        job.addCacheFile(new URI(args[0]+"#file.csv"));
+        job.addCacheFile(new URI(args[0]+"#data.csv"));
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
