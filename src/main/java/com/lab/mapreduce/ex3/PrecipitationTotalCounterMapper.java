@@ -28,12 +28,12 @@ public class PrecipitationTotalCounterMapper extends Mapper<LongWritable, Text, 
         String date = fields[1] ;
         String year = date.split("/")[2] ;
         try {
-            Float precipitation = Float.parseFloat(fields[10]);
+            float precipitation = Float.parseFloat(fields[10]);
 
             one.set(precipitation);
             context.write(new Text(year), one);
         }catch(NumberFormatException numberFormatException) {
-
+            System.out.println(numberFormatException.getMessage() + " in line " + line);
         }
     }
 }
