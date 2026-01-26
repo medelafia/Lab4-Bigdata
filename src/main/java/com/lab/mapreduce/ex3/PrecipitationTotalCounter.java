@@ -1,6 +1,7 @@
 package com.lab.mapreduce.ex3;
 
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -22,7 +23,7 @@ public class PrecipitationTotalCounter {
         job.setJarByClass(PrecipitationTotalCounter.class);
 
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(IntWritable.class);
+        job.setMapOutputValueClass(FloatWritable.class);
 
         job.addCacheFile(new URI(args[0]+"#data.csv"));
         FileInputFormat.addInputPath(job, new Path(args[0]));
