@@ -18,10 +18,10 @@ public class Record {
     public Float sealevelpressure ;
     public Float cloudcover ;
     public Float  visibility ;
-    public Float conditions ;
+    public String conditions ;
 
 
-    public Record(Float tempmax, Float tempmin, Float temp, Float feelslikemax, Float feelslikemin, Float feelslike, Float dew, Float humidity, Float precip, Float precipprob, Float precipcover, String preciptype, Float windspeed, Float winddir, Float sealevelpressure, Float cloudcover, Float visibility, Float conditions) {
+    public Record(Float tempmax, Float tempmin, Float temp, Float feelslikemax, Float feelslikemin, Float feelslike, Float dew, Float humidity, Float precip, Float precipprob, Float precipcover, String preciptype, Float windspeed, Float winddir, Float sealevelpressure, Float cloudcover, Float visibility, String conditions) {
         this.tempmax = tempmax;
         this.tempmin = tempmin;
         this.temp = temp;

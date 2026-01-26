@@ -30,7 +30,7 @@ public class RecordCounterMapper extends Mapper<LongWritable, Text, Text, IntWri
         if(line.equals(header) || fields.length < 20) return ;
         Text outputKey = new Text(fields[1]);
 
-        Record record = new Record(Float.parseFloat(fields[2]) , Float.parseFloat(fields[3]), Float.parseFloat(fields[4]) ,Float.parseFloat(fields[5]) , Float.parseFloat(fields[6]), Float.parseFloat(fields[7]), Float.parseFloat(fields[8]), Float.parseFloat(fields[9]) , Float.parseFloat(fields[10]) , Float.parseFloat(fields[11]) , Float.parseFloat(fields[12]) , fields[13] , Float.parseFloat(fields[14]),Float.parseFloat(fields[15]), Float.parseFloat(fields[16]),Float.parseFloat(fields[17]), Float.parseFloat(fields[18]),Float.parseFloat(fields[19]) ) ;
+        Record record = new Record(Float.parseFloat(fields[2]) , Float.parseFloat(fields[3]), Float.parseFloat(fields[4]) ,Float.parseFloat(fields[5]) , Float.parseFloat(fields[6]), Float.parseFloat(fields[7]), Float.parseFloat(fields[8]), Float.parseFloat(fields[9]) , Float.parseFloat(fields[10]) , Float.parseFloat(fields[11]) , Float.parseFloat(fields[12]) , fields[13] , Float.parseFloat(fields[14]),Float.parseFloat(fields[15]), Float.parseFloat(fields[16]),Float.parseFloat(fields[17]), Float.parseFloat(fields[18]),fields[19]  ) ;
         if(record.humidity <= 100 && record.visibility >= 0 && record.tempmax > record.tempmin && record.sealevelpressure >= 870 && record.sealevelpressure <= 1085) {
             context.write( outputKey , one );
         }
