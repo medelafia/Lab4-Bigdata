@@ -17,7 +17,7 @@ public class RecordCounterMapper extends Mapper<LongWritable, Text, Text, IntWri
     private IntWritable one = new IntWritable(1);
     @Override
     protected void setup(Mapper<LongWritable, Text, Text, IntWritable>.Context context) throws IOException, InterruptedException {
-        BufferedReader reader = new BufferedReader(new FileReader("file.csv"));
+        BufferedReader reader = new BufferedReader(new FileReader("data.csv"));
         header = reader.readLine();
     }
 
