@@ -24,7 +24,7 @@ public class RecordCounterMapper extends Mapper<LongWritable, Text, Text, IntWri
     @Override
     protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, IntWritable>.Context context) throws IOException, InterruptedException {
         String line = value.toString();
-        String[] fields = line.split(",");
+        String[] fields = line.split(";");
 
 
         if(line.equals(header) || fields.length < 20) return ;
