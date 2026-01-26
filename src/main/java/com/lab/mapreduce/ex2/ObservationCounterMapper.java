@@ -17,14 +17,14 @@ public class ObservationCounterMapper extends Mapper<LongWritable, Text, Text, I
     private IntWritable one = new IntWritable(1);
     @Override
     protected void setup(Mapper<LongWritable, Text, Text, IntWritable>.Context context) throws IOException, InterruptedException {
-        BufferedReader reader = new BufferedReader(new FileReader("file.csv"));
+        BufferedReader reader = new BufferedReader(new FileReader("data.csv"));
         header = reader.readLine();
     }
 
     @Override
     protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, IntWritable>.Context context) throws IOException, InterruptedException {
         String line = value.toString();
-        String[] fields = line.split(",");
+        String[] fields = line.split(";");
 
         if(line.equals(header) || fields.length < 20) return ;
 
