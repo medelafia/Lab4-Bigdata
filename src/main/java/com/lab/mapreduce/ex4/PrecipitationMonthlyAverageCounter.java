@@ -2,6 +2,7 @@ package com.lab.mapreduce.ex4;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.FloatWritable;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -21,7 +22,7 @@ public class PrecipitationMonthlyAverageCounter {
         job.setReducerClass(PrecipitationMonthlyAverageCounterReducer.class);
         job.setJarByClass(PrecipitationMonthlyAverageCounter.class);
 
-        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputKeyClass(IntWritable.class);
         job.setMapOutputValueClass(FloatWritable.class);
 
         job.addCacheFile(new URI(args[0]+"#data.csv"));
