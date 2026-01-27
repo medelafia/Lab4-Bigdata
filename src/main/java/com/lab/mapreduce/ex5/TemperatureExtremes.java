@@ -1,5 +1,6 @@
 package com.lab.mapreduce.ex5;
 
+import com.lab.mapreduce.utils.ExtremesTemperatureWritable;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.Text;
@@ -27,7 +28,7 @@ public class TemperatureExtremes {
         job.setJarByClass(TemperatureExtremes.class);
 
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(FloatWritable.class);
+        job.setMapOutputValueClass(ExtremesTemperatureWritable.class);
 
         job.addCacheFile(new URI(args[0]+"#data.csv"));
         FileInputFormat.addInputPath(job, new Path(args[0]));
