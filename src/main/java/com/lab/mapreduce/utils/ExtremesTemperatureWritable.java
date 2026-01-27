@@ -38,4 +38,9 @@ public class ExtremesTemperatureWritable implements Writable {
         this.value = dataInput.readFloat();
         this.year = dataInput.readInt();
     }
+
+    @Override
+    public String toString() {
+        return  year + "\t" + value;
+    }
 }
