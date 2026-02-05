@@ -41,6 +41,6 @@ public class ExtremesTemperatureWritable implements Writable {
 
     @Override
     public String toString() {
-        return  year + "\t" + value;
+        return  year + "\t" + value;cassandra:latest
     }
 }
