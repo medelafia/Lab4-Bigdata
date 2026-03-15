@@ -25,7 +25,11 @@ public class HdfsExercise4 {
             while((line = bufferedReader.readLine()) != null ) {
                 Tree.loadFromLine(line);
 
-                System.out.println( "Planted Year : " + Tree.getYear() + " , Height : " + Tree.getHeight() );
+                try{
+                    System.out.println( "Planted Year : " + Tree.getYear() + " , Height : " + Tree.getHeight() );
+                }catch(NumberFormatException e){
+                    System.out.println("Invalid line : " + line);
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
