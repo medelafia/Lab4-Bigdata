@@ -10,7 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class HdfsPractice2 {
+public class HdfsExercise2 {
     public static void main(String[] args) throws IOException {
         Configuration conf = new Configuration();
         FileSystem fs = FileSystem.get(conf);
@@ -24,6 +24,8 @@ public class HdfsPractice2 {
             }
         }catch (IOException e){
             e.printStackTrace();
+        }finally {
+            fs.close();
         }
     }
 }
