@@ -14,7 +14,9 @@ public class HdfsExercise {
         Path pathOut = new Path("/data/trees.csv");
 
         FileSystem fs = FileSystem.get(conf);
-        FSDataInputStream in = fs.open(pathIn);
+        FileSystem localFs = FileSystem.getLocal(conf);
+
+        FSDataInputStream in = localFs.open(pathIn);
         FSDataOutputStream out = fs.create(pathOut);
 
         int aChar ;
