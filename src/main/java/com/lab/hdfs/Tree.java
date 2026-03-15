@@ -14,7 +14,7 @@ public abstract class Tree {
     }
 
     public static double getHeight() throws NumberFormatException  {
-        return Double.parseDouble(fields[6]);
+        return Double.parseDouble(fields[7]);
     }
 
 }

@@ -21,7 +21,9 @@ public class HdfsExercise4 {
                 FSDataInputStream fsDataInputStream = fs.open(new Path("/data/trees.csv"));
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fsDataInputStream));
         ) {
+            bufferedReader.readLine();
             String line;
+
             while((line = bufferedReader.readLine()) != null ) {
                 Tree.loadFromLine(line);
 
